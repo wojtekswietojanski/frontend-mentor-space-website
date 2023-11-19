@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&family=Zen+Tokyo+Zoo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+/* hamburger menu */
+.hamburger {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hamburger:focus > .hamburger__container {
+  box-shadow: 0 0 2px 2px #51a7e8;
+}
+
+.hamburger:focus,
+.hamburger__container:focus {
+  outline: none;
+}
+
+.hamburger__container {
+  z-index: 10;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 35px;
+  height: 30px;
+}
+
+.hamburger__bars {
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: transform 220ms ease-in-out;
+}
+
+.hamburger__bars::before,
+.hamburger__bars::after {
+  display: block;
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  content: "";
+}
+
+.hamburger__bars::before {
+  top: -12px;
+  transition: top 100ms 250ms ease-in, transform 220ms ease-in-out;
+}
+
+.hamburger__bars::after {
+  bottom: -12px;
+  transition: bottom 100ms 250ms ease-in, transform 220ms ease-in-out;
+}
+
+.hamburger--active .hamburger__bars {
+  transform: rotate(225deg);
+  transition: transform 220ms 120ms ease-in-out;
+}
+
+.hamburger--active .hamburger__bars::before {
+  top: 0;
+  transition: top 100ms ease-out;
+}
+
+.hamburger--active .hamburger__bars::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 100ms ease-out, transform 220ms 120ms ease-in-out;
+}
+
+/* hamburger navigation */
+
+.hamburgerNav {
+  display: none;
+  z-index: 5;
+  position: fixed;
+  right: 0px;
+  height: 100vh;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px 0px 0px 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.8px);
+  -webkit-backdrop-filter: blur(16.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: SlideRight 0.5s ease-in;
+}
+
+.hamburgerNav nav {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburgerNav nav a {
+  margin: 10px 0px 0px 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.hamburgerNav nav a:hover {
+  border-bottom: 2px white solid;
+}
+
+.hamburgerNav--active {
+  display: block;
+}
+
+@keyframes SlideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* HomePage desktop */
+body {
+  min-height: 800px;
+  position: relative;
+  background-image: url("/starter-code/assets/home/background-home-desktop.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.navigationBar {
+  position: absolute;
+  width: 95%;
+  left: 5%;
+  top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigationBar nav {
+  background-color: rgb(255, 255, 255, 0.04);
+  backdrop-filter: blur(16.6px);
+  -webkit-backdrop-filter: blur(16.6px);
+  padding-top: 17px;
+  padding-bottom: 12px;
+  padding-right: 15%;
+  padding-left: 9%;
+  text-decoration: none;
+  color: white;
+}
+
+.navigationBar nav a {
+  margin-right: 25px;
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.navigationBar nav a:hover {
+  border-bottom: 4px white solid;
+}
+
+.HomeTxt {
+  position: absolute;
+  left: 161px;
+  bottom: 131px;
+  display: flex;
+  width: 450px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.HomeTxt p {
+  color: white;
+  font-size: 20px;
+}
+
+#preTitle {
+  font-size: 32px;
+}
+
+h1 {
+  font-size: 142px;
+  color: white;
+}
+#circle {
+  text-align: center;
+  width: 274px;
+  height: 274px;
+  position: absolute;
+  right: 165px;
+  bottom: 131px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#circle p {
+  font-size: 35px;
+}
+
+/* homePage Tablet */
+@media (max-width: 1050px) {
+  body {
+    background-image: url("/starter-code/assets/home/background-home-tablet.jpg");
+    min-height: 900px;
+  }
+
+  .navigationBar nav {
+    width: 70%;
+    padding: 10px 10px 10px 40px;
+  }
+
+  .navigationBar nav a {
+    margin: 0px, 10px, 0px, 0px;
+    font-size: 18px;
+  }
+  .navigationBar nav a b {
+    display: none;
+  }
+
+  .HomeTxt {
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 202px;
+    text-align: center;
+  }
+
+  .HomeTxt p {
+    font-size: 15px;
+  }
+
+  #preTitle {
+    font-size: 25px;
+  }
+
+  h1 {
+    font-size: 142px;
+  }
+
+  #circle {
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 90px;
+    width: 242px;
+    height: 242px;
+  }
+}
+
+@media (max-width: 740px) {
+  body {
+    min-width: 309px;
+    min-height: 560px;
+    background-image: url("/starter-code/assets/home/background-home-mobile.jpg");
+    overflow: hidden;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navigationBar svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navigationBar nav {
+    display: none;
+  }
+
+  .HomeTxt {
+    top: 112px;
+    width: 80%;
+  }
+
+  #preTitle {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  .HomeTxt p {
+    font-size: 12px;
+  }
+
+  #circle {
+    width: 150px;
+    height: 150px;
+    bottom: 48px;
+  }
+
+  #circle p {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&family=Zen+Tokyo+Zoo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+.hamburger {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hamburger:focus > .hamburger__container {
+  box-shadow: 0 0 2px 2px #51a7e8;
+}
+
+.hamburger:focus,
+.hamburger__container:focus {
+  outline: none;
+}
+
+.hamburger__container {
+  z-index: 10;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 35px;
+  height: 30px;
+}
+
+.hamburger__bars {
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: transform 220ms ease-in-out;
+}
+
+.hamburger__bars::before,
+.hamburger__bars::after {
+  display: block;
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  content: "";
+}
+
+.hamburger__bars::before {
+  top: -12px;
+  transition: top 100ms 250ms ease-in, transform 220ms ease-in-out;
+}
+
+.hamburger__bars::after {
+  bottom: -12px;
+  transition: bottom 100ms 250ms ease-in, transform 220ms ease-in-out;
+}
+
+.hamburger--active .hamburger__bars {
+  transform: rotate(225deg);
+  transition: transform 220ms 120ms ease-in-out;
+}
+
+.hamburger--active .hamburger__bars::before {
+  top: 0;
+  transition: top 100ms ease-out;
+}
+
+.hamburger--active .hamburger__bars::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 100ms ease-out, transform 220ms 120ms ease-in-out;
+}
+
+/* hamburger navigation */
+
+.hamburgerNav {
+  display: none;
+  z-index: 5;
+  position: fixed;
+  right: 0px;
+  height: 100vh;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px 0px 0px 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.8px);
+  -webkit-backdrop-filter: blur(16.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: SlideRight 0.5s ease-in;
+}
+
+.hamburgerNav nav {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburgerNav nav a {
+  margin: 10px 0px 0px 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.hamburgerNav nav a:hover {
+  border-bottom: 2px white solid;
+}
+
+.hamburgerNav--active {
+  display: block;
+}
+
+@keyframes SlideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Crew page */
+
+body {
+  position: relative;
+  background-image: url("/starter-code/assets/technology/background-technology-desktop.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  min-height: 900px;
+}
+
+.navigationBar {
+  position: absolute;
+  width: 95%;
+  left: 5%;
+  top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigationBar nav {
+  background-color: rgb(255, 255, 255, 0.04);
+  backdrop-filter: blur(16.6px);
+  -webkit-backdrop-filter: blur(16.6px);
+  padding-top: 17px;
+  padding-bottom: 12px;
+  padding-right: 15%;
+  padding-left: 9%;
+  text-decoration: none;
+  color: white;
+}
+
+.navigationBar nav a {
+  margin-right: 25px;
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.navigationBar nav a:hover {
+  border-bottom: 4px white solid;
+}
+
+main {
+  position: absolute;
+  left: 10%;
+  bottom: 100px;
+  height: 70%;
+  color: #ffffff;
+  width: 90%;
+}
+
+#title {
+  height: 10%;
+  width: 100%;
+  font-size: 32px;
+}
+
+#content {
+  display: flex;
+  height: 90%;
+  justify-content: space-between;
+}
+
+#buttonsContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5%;
+}
+
+#buttonsContainer button {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-top: 40px;
+  border: 2px grey solid;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+#technologyText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+#name {
+  font-size: 70px;
+}
+
+#technologyText p {
+  font-size: 20px;
+}
+
+main img {
+  height: 100%;
+}
+
+@media (max-width: 1050px) {
+  html {
+    overflow: hidden;
+  }
+  body {
+    background-image: url("/starter-code/assets/technology/background-technology-tablet.jpg");
+  }
+
+  .navigationBar nav {
+    width: 70%;
+    padding: 10px 10px 10px 40px;
+  }
+
+  .navigationBar nav a {
+    margin: 0px, 10px, 0px, 0px;
+    font-size: 18px;
+  }
+  .navigationBar nav a b {
+    display: none;
+  }
+}
+
+@media (max-width: 1300px) {
+  body {
+    width: 100%;
+  }
+  main {
+    top: 100px;
+    position: absolute;
+    left: 0px;
+    bottom: 100px;
+    height: fit-content;
+    color: #ffffff;
+    width: 100%;
+  }
+
+  #title {
+    font-size: 25px;
+    margin-left: 40px;
+  }
+
+  #content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+  #buttonsContainer {
+    margin: 0px;
+    flex-direction: row;
+  }
+
+  #buttonsContainer button {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  #technologyText {
+    width: 80%;
+    margin: auto;
+  }
+
+  #name {
+    font-size: 50px;
+  }
+
+  #technologyText p {
+    font-size: 18px;
+  }
+
+  #content img {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 740px) {
+  body {
+    min-width: 300px;
+    background-image: url("/starter-code/assets/technology/background-technology-mobile.jpg");
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navigationBar svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navigationBar nav {
+    display: none;
+  }
+
+  #title {
+    font-size: 20px;
+    margin-left: 40px;
+  }
+
+  #buttonsContainer button {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  #name {
+    font-size: 30px;
+  }
+
+  #technologyText p {
+    font-size: 13px;
+  }
+}
