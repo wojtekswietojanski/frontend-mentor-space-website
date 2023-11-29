@@ -134,7 +134,7 @@
 body {
   min-height: 800px;
   position: relative;
-  background-image: url("/starter-code/assets/home/background-home-desktop.jpg");
+  background-image: url("/frontend-mentor-space-website/starter-code/assets/home/background-home-desktop.jpg");
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -218,7 +218,7 @@ h1 {
 /* homePage Tablet */
 @media (max-width: 1050px) {
   body {
-    background-image: url("/starter-code/assets/home/background-home-tablet.jpg");
+    background-image: url("/frontend-mentor-space-website/starter-code/assets/home/background-home-tablet.jpg");
     min-height: 900px;
   }
 
@@ -267,7 +267,7 @@ h1 {
   body {
     min-width: 309px;
     min-height: 560px;
-    background-image: url("/starter-code/assets/home/background-home-mobile.jpg");
+    background-image: url("/frontend-mentor-space-website/starter-code/assets/home/background-home-mobile.jpg");
     overflow: hidden;
   }
 
